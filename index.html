@@ -8,12 +8,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Outwork" />
     <title>Outwork</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-icon" href="icon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <script>
+      if (!location.pathname.endsWith("/") && !location.pathname.split("/").pop().includes(".")) {
+        location.replace(`${location.pathname}/${location.search}${location.hash}`);
+      }
+    </script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div id="app" class="app-shell"></div>
-    <script src="app.js" type="module"></script>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>

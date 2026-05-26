@@ -306,7 +306,7 @@ function renderToday() {
       </div>
       <div class="status-number">${Math.round((doneCount / Math.max(exercises.length, 1)) * 100)}%</div>
     </section>
-    <section class="dashboard" aria-label="Tagesuebersicht">
+    <section class="dashboard ${exercises.length > 6 ? "scrolling" : ""}" style="--exercise-count:${Math.max(exercises.length, 1)}" aria-label="Tagesuebersicht">
       ${
         exercises.length
           ? exercises.map(renderExerciseCard).join("")

@@ -135,9 +135,16 @@ button {
   min-height: 0;
   display: grid;
   gap: 6px;
-  align-content: start;
-  overflow: auto;
+  grid-template-rows: repeat(var(--exercise-count), minmax(0, 1fr));
+  align-content: stretch;
+  overflow: hidden;
   scrollbar-width: none;
+}
+
+.dashboard.scrolling {
+  grid-template-rows: none;
+  grid-auto-rows: minmax(66px, auto);
+  overflow: auto;
 }
 
 .dashboard::-webkit-scrollbar {
@@ -150,7 +157,7 @@ button {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
-  min-height: 76px;
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 6px;
@@ -212,12 +219,13 @@ button {
 .quick-grid {
   display: grid;
   grid-template-columns: repeat(2, 46px);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 5px;
   align-content: stretch;
 }
 
 .quick-btn {
-  min-height: 30px;
+  min-height: 0;
   padding: 0;
   font-size: 13px;
   font-weight: 800;
@@ -382,16 +390,15 @@ button {
   }
 
   .exercise-card {
-    min-height: 66px;
     padding: 7px;
   }
 
   .quick-grid {
     grid-template-columns: repeat(4, 35px);
+    grid-template-rows: 1fr;
   }
 
   .quick-btn {
-    min-height: 26px;
     font-size: 12px;
   }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = "outwork-v1";
+const CACHE_NAME = "outwork-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
